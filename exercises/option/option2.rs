@@ -6,7 +6,7 @@
 fn main() {
     let optional_word = Some(String::from("rustlings"));
     // TODO: Make this an if let statement whose value is "Some" type
-    word = optional_word {
+    if let Some(word) = optional_word {
         println!("The word is: {}", word);
     } else {
         println!("The optional word doesn't contain anything");
