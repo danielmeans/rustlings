@@ -37,6 +37,14 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.len() == 0 {
+            return Person::default();
+        }
+        let words: Vec<&str> = s.split(",").collect();
+        let name = words[0];
+        if name == "" {
+            return Person::default();
+        }
     }
 }
 
