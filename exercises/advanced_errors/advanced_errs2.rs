@@ -53,6 +53,8 @@ impl From<ParseFloatError> for ParseClimateError {
 // TODO: Implement a missing trait so that `main()` below will compile. It
 // is not necessary to implement any methods inside the missing trait.
 
+impl Error for ParseClimateError{}
+
 // The `Display` trait allows for other code to obtain the error formatted
 // as a user-visible string.
 impl Display for ParseClimateError {
