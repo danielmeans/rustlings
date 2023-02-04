@@ -95,6 +95,9 @@ impl FromStr for Climate {
             [city, year, temp] => (city.to_string(), year, temp),
             _ => return Err(ParseClimateError::BadLen),
         };
+        if city == "" {
+            return Err(ParseClimateError::NoCity)
+        }
         let year: u32 = year.parse()?;
         let temp: f32 = temp.parse()?;
         Ok(Climate { city, year, temp })
